@@ -11,14 +11,11 @@ class Subscribed(serializers.SerializerMetaclass):
 
     def get_is_subscribed(self, obj):
         request = self.context.get('request')
-        if request.user.is_anonymous:
-            return False
         if Subscribe.objects.filter(
                 user=request.user,
                 following__id=obj.id).exists():
             return True
-        else:
-            return False
+        return False
 
 
 class Recipes(serializers.SerializerMetaclass):
@@ -27,23 +24,17 @@ class Recipes(serializers.SerializerMetaclass):
 
     def get_is_favorite(self, obj):
         request = self.context.get('request')
-        if request.user.is_anonymous:
-            return False
         if FavoriteRecipe.objects.filter(
                 user=request.user,
                 recipe__id=obj.id).exists():
             return True
-        else:
-            return False
+        return False
 
     def get_is_in_cart(self, obj):
         request = self.context.get('request')
-        if request.user.is_anonymous:
-            return False
         if Cart.objects.filter(user=request.user, recipe__id=obj.id).exists():
             return True
-        else:
-            return False
+        return False
 
 
 class Count(serializers.SerializerMetaclass):
@@ -101,7 +92,7 @@ class IngredientAmountRecipeSerializer(serializers.ModelSerializer):
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
-        fields = '__all__'
+        fields = ('id', 'name', 'color', 'slug')
         extra_kwargs = {'name': {'required': False},
                         'slug': {'required': False},
                         'color': {'required': False}}
@@ -132,9 +123,9 @@ class RecipeSerializer(serializers.ModelSerializer,
 
     class Meta:
         model = Recipe
-        fields = ('id', 'author', 'name', 'image', 'text',
-                  'ingredients', 'tags', 'cooking_time',
-                  'is_in_shopping_cart', 'is_favorited')
+        fields = ('id', 'tags', 'author', 'ingredients', 'is_favorited',
+                  'is_in_shopping_cart', 'name', 'image',
+                  'text', 'cooking_time')
 
 
 class RecipeSerializerPost(serializers.ModelSerializer,
@@ -149,9 +140,9 @@ class RecipeSerializerPost(serializers.ModelSerializer,
 
     class Meta:
         model = Recipe
-        fields = ('id', 'author', 'name', 'image', 'text',
-                  'ingredients', 'tags', 'cooking_time',
-                  'is_in_shopping_cart', 'is_favorited')
+        fields = ('id', 'tags', 'author', 'ingredients', 'is_favorited',
+                  'is_in_shopping_cart', 'name', 'image',
+                  'text', 'cooking_time')
 
     def validate_ingredients(self, value):
         ingredients_list = []
