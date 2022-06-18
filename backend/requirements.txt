@@ -3,3 +3,5 @@ django==2.2.16
 django-rest-framework
 colorfield
 reportlab
+gunicorn
+psycopg2-binary
