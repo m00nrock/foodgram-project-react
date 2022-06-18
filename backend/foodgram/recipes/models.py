@@ -71,10 +71,12 @@ class Recipe(models.Model):
         help_text='Как будем готовить?'
     )
     time = models.IntegerField(
-        validators=[MinValueValidator(1, 'Минимальное время приготовления - 1')],
+        validators=[
+            MinValueValidator(
+                1,
+                'Минимальное время приготовления - 1')],
         verbose_name='Время приготовления',
-        help_text='Сколько времени будем готовить?'
-    )
+        help_text='Сколько времени будем готовить?')
     ingredients = models.ManyToManyField(
         Ingredient,
         through='IngredientRecipe',
