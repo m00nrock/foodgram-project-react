@@ -75,4 +75,3 @@ class SubscribeAdmin(admin.ModelAdmin):
     search_fields = ('user', )
     empty_value_display = '-пусто-'
     list_filter = ('user',)
-
