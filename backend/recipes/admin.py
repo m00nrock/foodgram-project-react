@@ -1,4 +1,5 @@
 from django.contrib import admin
+from foodgram.settings import EMPTY_VALUE
 from users.models import User
 
 from .models import (Cart, Favorite, Ingredient, IngredientRecipe, Recipe,
@@ -19,7 +20,7 @@ class TagRecipeInline(admin.TabularInline):
 class UserAdmin(admin.ModelAdmin):
     list_display = ('username', 'email', 'id')
     search_fields = ('username', 'email')
-    empty_value_display = '-пусто-'
+    empty_value_display = EMPTY_VALUE
     list_filter = ('username', 'email')
 
 
@@ -27,7 +28,7 @@ class UserAdmin(admin.ModelAdmin):
 class IngredientAdmin(admin.ModelAdmin):
     list_display = ('name', 'measurement_unit')
     search_fields = ('name', )
-    empty_value_display = '-пусто-'
+    empty_value_display = EMPTY_VALUE
     list_filter = ('name',)
 
 
@@ -35,7 +36,7 @@ class IngredientAdmin(admin.ModelAdmin):
 class TagAdmin(admin.ModelAdmin):
     list_display = ('name', 'color', 'slug')
     search_fields = ('name', )
-    empty_value_display = '-пусто-'
+    empty_value_display = EMPTY_VALUE
     list_filter = ('name',)
 
 
@@ -43,7 +44,7 @@ class TagAdmin(admin.ModelAdmin):
 class CartAdmin(admin.ModelAdmin):
     list_display = ('user', 'recipe', 'id')
     search_fields = ('user', )
-    empty_value_display = '-пусто-'
+    empty_value_display = EMPTY_VALUE
     list_filter = ('user',)
 
 
@@ -51,7 +52,7 @@ class CartAdmin(admin.ModelAdmin):
 class FavoriteAdmin(admin.ModelAdmin):
     list_display = ('user', 'recipe')
     search_fields = ('user', )
-    empty_value_display = '-пусто-'
+    empty_value_display = EMPTY_VALUE
     list_filter = ('user',)
 
 
@@ -61,7 +62,7 @@ class RecipeAdmin(admin.ModelAdmin):
     list_display = ('name', 'author', 'cooking_time',
                     'id', 'count_favorite', 'pub_date')
     search_fields = ('name', 'author', 'tags')
-    empty_value_display = '-пусто-'
+    empty_value_display = EMPTY_VALUE
     list_filter = ('name', 'author', 'tags')
 
     def count_favorite(self, obj):
@@ -73,5 +74,5 @@ class RecipeAdmin(admin.ModelAdmin):
 class SubscribeAdmin(admin.ModelAdmin):
     list_display = ('user', 'following')
     search_fields = ('user', )
-    empty_value_display = '-пусто-'
+    empty_value_display = EMPTY_VALUE
     list_filter = ('user',)

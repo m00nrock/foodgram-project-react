@@ -1,7 +1,3 @@
-"""
-Django настройки для проекта Foodgram.
-"""
-
 import os
 
 from dotenv import load_dotenv
@@ -139,3 +135,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/staticfiles/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+EMPTY_VALUE = '-пусто-'
