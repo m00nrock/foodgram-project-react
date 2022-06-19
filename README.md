@@ -2,7 +2,9 @@
 
 # Проект Foodgram
 
-## Адрес
+## Адрес 
+
+http://178.154.196.23/
 
 User log:pass - iamjustuser@yandex.ru:Supermegapa55w@rd
 Admin log:pass - admin@foodgram.com:A23nfe#$2&&ls

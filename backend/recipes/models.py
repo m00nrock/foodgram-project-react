@@ -199,10 +199,10 @@ class TagRecipe(models.Model):
     class Meta:
         verbose_name = 'Теги рецепта'
         verbose_name_plural = 'Теги рецепта'
-        constraints = ( 
+        constraints = (
             models.UniqueConstraint(fields=('tag', 'recipe',),
                                     name='unique_tagrecipe'),
-        ) 
+        )
 
     def __str__(self):
         return f'{self.tag} {self.recipe}'

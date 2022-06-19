@@ -6,8 +6,7 @@ from djoser.views import UserViewSet
 from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 
-from recipes.models import (Cart, Favorite, Ingredient, IngredientRecipe,
-                            Recipe, Subscribe, Tag)
+from recipes.models import Cart, Favorite, Ingredient, Recipe, Subscribe, Tag
 from users.models import User
 
 from .filters import IngredientSearchFilter, RecipeFilters
@@ -107,5 +106,3 @@ class FavoriteViewSet(BaseFavoriteCartViewSet):
     serializer_class = FavoriteSerializer
     queryset = Favorite.objects.all()
     model = Favorite
-
-
