@@ -11,9 +11,7 @@ services:
     restart: always
 
   backend:
-    build:
-      context: ../backend/
-      dockerfile: Dockerfile
+    image: m00nrock/foodgram:latest
     restart: always
     depends_on:
       - db
@@ -21,12 +19,10 @@ services:
       - static_value:/app/backend/staticfiles/
       - media_value:/app/backend/media/
     env_file:
-      - ./.env
+      - .env
 
   frontend:
-    build:
-      context: ../frontend
-      dockerfile: Dockerfile
+    image: m00nrock/foodgram_front:latest
     volumes:
       - result_build:/app/result_build/build/
     depends_on:
