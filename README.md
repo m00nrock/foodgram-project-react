@@ -4,9 +4,10 @@
 
 ## Адрес 
 
-http://178.154.196.23/
+http://51.250.97.54/
 
 User log:pass - iamjustuser@yandex.ru:Supermegapa55w@rd
+
 Admin log:pass - admin@foodgram.com:A23nfe#$2&&ls
 
 

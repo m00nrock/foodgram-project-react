@@ -61,7 +61,7 @@ jobs:
         with:
           push: true
           tags: m00nrock/foodgram:latest
-          file: backend/Dockerfile
+          file: ./backend/Dockerfile
       
       - name: send notification push OK
         if: success()
