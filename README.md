@@ -1,4 +1,4 @@
-![Foodgram](https://github.com/m00nrockfoodgram-project-react/actions/workflows/foodgram_pipeline.yml/badge.svg)
+[![Foodgram_pipeline](https://github.com/m00nrock/foodgram-project-react/actions/workflows/foodgram_pipeline.yml/badge.svg)](https://github.com/m00nrock/foodgram-project-react/actions/workflows/foodgram_pipeline.yml)
 
 # Проект Foodgram
 
