@@ -1,15 +1,6 @@
-![Foodgram](https://github.com/m00nrockfoodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)
+![Foodgram](https://github.com/m00nrockfoodgram-project-react/actions/workflows/foodgramp_pipeline.yml/badge.svg)
 
 # Проект Foodgram
-
-## Адрес 
-
-http://51.250.97.54/
-
-User log:pass - iamjustuser@yandex.ru:Supermegapa55w@rd
-
-Admin log:pass - admin@foodgram.com:A23nfe#$2&&ls
-
 
 ## Описание
 
